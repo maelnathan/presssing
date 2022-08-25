@@ -31,4 +31,8 @@ spring:
       order_updates: true
   application:
     name: pressing
+logging:
+  file:
+    path: logback-spring.xml
+    name: log/jour
 
