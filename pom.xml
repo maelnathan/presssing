@@ -1,65 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
+
+	<!--=== indique le nom du package ===-->
 	<groupId>com.formationjava</groupId>
+	<!--=== indique le nom de l'application ===-->
 	<artifactId>pressing</artifactId>
+	<!--=== indique la version de l'application ===-->
 	<version>0.0.1-SNAPSHOT</version>
+	<!--=== idem que le nom de l'application ===-->
 	<name>pressing</name>
+	<!--=== Description de l'application ===-->
 	<description>Back end de gestion des pressing</description>
+
 	<properties>
+		<!--=== Version de Java ===-->
 		<java.version>11</java.version>
-		<spring-boot.version>2.7.3</spring-boot.version>
-		<!--Encordage du projet-->
+		<!--=== Encordage du projet ===-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!--=== Lancer l'application sur le point d'entrée ===-->
 		<start-class>com.formationjava.pressing.PressingApplication</start-class>
+		<!--=== Version du spring boot ===-->
+		<spring-boot.version>2.7.3</spring-boot.version>
+		<!--=== Version du HikariCP ===-->
+		<HikariCP.version>5.0.1</HikariCP.version>
+		<!--=== Version de la documentation ===-->
+		<springdoc-openapi-ui.version>1.6.11</springdoc-openapi-ui.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+
+		<!--=== Créez des applications Web, y compris RESTful, à l'aide de Spring MVC.
+		Utilise Apache Tomcat comme conteneur intégré par défaut.===-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!--=== Persistez les données dans les magasins SQL avec l'API Java Persistence
+		en utilisant Spring Data et Hibernate.===-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!--=== Validation avec Spring Boot===-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
+		<!--=== Fournit des redémarrages rapides des applications, LiveReload
+		et des configurations pour une expérience de développement améliorée.===-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+
+		<!--=== MySQL JDBC et R2DBC driver.===-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!--=== Ultimate JDBC Connection Pool ===-->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>${HikariCP.version}</version>
+		</dependency>
+
+		<!--La bibliothèque java qui permet d'automatiser la génération de la documentation de l'API -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>${springdoc-openapi-ui.version}</version>
+		</dependency>
+
+		<!--=== Bibliothèque d'annotations Java qui aide à réduire le code passe-partout.===-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<!--=== Pour les tests unitaires.===-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
+		<defaultGoal>spring-boot:run</defaultGoal>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -72,14 +120,9 @@
 						</goals>
 					</execution>
 				</executions>
-
 				<configuration>
 					<mainClass>${start-class}</mainClass>
 					<fork>true</fork>
-					<!--
-                    Enable the line below to have remote debugging of your application on port 5005
-                    <jvmArguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005</jvmArguments>
-                    -->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

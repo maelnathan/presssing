@@ -1,11 +1,13 @@
+#=== Port d'ecoute ===#
 server:
   port: 8081
 spring:
+  #=== Source de données ===#
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/pressing_db?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:8889/pressing_db?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
-    password:
+    password: root
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       poolName: Hikari
@@ -15,14 +17,18 @@ spring:
         prepStmtCacheSize: 250
         prepStmtCacheSqlLimit: 2048
         useServerPrepStmts: true
+  #=== Jpa Hibernate pour la persistance des données ===#
   jpa:
     hibernate:
       ddl-auto: update
       naming:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-  properties:
-    dialect: org.hibernate.dialect.MySQL5Dialect
-    order_inserts: true
-    order_updates: true
+    properties:
+    #=== Permet à Hibernate de générer du SQL optimisé pour un SGBD particulier ===#
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      order_inserts: true
+      order_updates: true
+  application:
+    name: pressing
 
