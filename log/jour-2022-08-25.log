@@ -1,0 +1,28 @@
+2022-08-25 22:52:39.450  INFO 11040 --- [restartedMain] c.f.pressing.PressingApplication         : Starting PressingApplication using Java 11.0.16.1 on DESKTOP-N0B6C99 with PID 11040 (D:\developpements\java\pressing\target\classes started by Romaric in D:\developpements\java\pressing)
+2022-08-25 22:52:39.450  INFO 11040 --- [restartedMain] c.f.pressing.PressingApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-08-25 22:52:39.534  INFO 11040 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-25 22:52:39.534  INFO 11040 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-25 22:52:40.886  INFO 11040 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-25 22:52:40.902  INFO 11040 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2022-08-25 22:52:41.658  INFO 11040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-08-25 22:52:41.673  INFO 11040 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-25 22:52:41.673  INFO 11040 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-25 22:52:41.820  INFO 11040 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-25 22:52:41.820  INFO 11040 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2286 ms
+2022-08-25 22:52:41.989  INFO 11040 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-25 22:52:42.036  INFO 11040 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-25 22:52:42.190  INFO 11040 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-25 22:52:42.375  INFO 11040 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : Hikari - Starting...
+2022-08-25 22:52:42.522  INFO 11040 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : Hikari - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c7cca86
+2022-08-25 22:52:42.538  INFO 11040 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : Hikari - Start completed.
+2022-08-25 22:52:42.553  INFO 11040 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2022-08-25 22:52:42.838  INFO 11040 --- [restartedMain] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3f0ae982] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-08-25 22:52:42.870  INFO 11040 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-25 22:52:42.876  INFO 11040 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-25 22:52:43.077  WARN 11040 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-25 22:52:44.110  INFO 11040 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-25 22:52:44.157  INFO 11040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-08-25 22:52:44.179  INFO 11040 --- [restartedMain] c.f.pressing.PressingApplication         : Started PressingApplication in 5.538 seconds (JVM running for 7.235)
+2022-08-25 22:53:04.200  INFO 11040 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-25 22:53:04.215  INFO 11040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : Hikari - Shutdown initiated...
+2022-08-25 22:53:04.237  INFO 11040 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : Hikari - Shutdown completed.
