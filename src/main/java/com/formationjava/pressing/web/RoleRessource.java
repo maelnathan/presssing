@@ -15,6 +15,7 @@ import javax.validation.Valid;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -60,4 +61,25 @@ public class RoleRessource {
         return ResponseEntity.ok().body(pageRole.getContent());
     }
 
+
+    @DeleteMapping("/roles/{id}")
+    public ResponseEntity deleteRole(@PathVariable(value = "id", required = false) final Long id) {
+
+        if(!roleRepository.existsById(id)){
+            log.info("Impossible d'effectuer la suppression d'un id inexistant.");
+        }
+
+        roleService.delete(id);
+        return new ResponseEntity<>("La suppression a été effectuée", HttpStatus.OK);
+    }
+    @GetMapping("/roles/{id}")
+    public ResponseEntity<Optional<Role>> getOneRole(@PathVariable(value = "id", required = false) final Long id) {
+
+        if(!roleRepository.existsById(id)){
+            log.info("Impossible d'afficher un role dont l'id est inexistant.");
+        }
+
+        Optional<Role> role = roleService.findOne(id);
+        return new ResponseEntity<>(role, HttpStatus.OK);
+    }
 }
