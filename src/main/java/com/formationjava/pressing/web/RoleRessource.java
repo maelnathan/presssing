@@ -39,6 +39,13 @@ public class RoleRessource {
         this.roleRepository = roleRepository;
     }
 
+    /**
+     * {@code POST  /roles} : Créer un nouveau role.
+     *
+     * @param role le role à créer
+     * @return le {@link ResponseEntity} avec statut {@code 201 (Created)} et le corps role, ou statut {@code 400 (Bad Request)} avec l'ID du role existe.
+     * @throws URISyntaxException si l'URL est incorrect.
+     */
     @PostMapping("/roles")
     public ResponseEntity<Role> createRole(@Valid @RequestBody Role role) throws URISyntaxException {
         if(role.getId() != null){
@@ -51,6 +58,16 @@ public class RoleRessource {
                 .body(role);
     }
 
+    /**
+     * {@code PUT  /rols/:id} : mise à jour du role.
+     *
+     * @param id l'id du role à modifier.
+     * @param role le role à modifier.
+     * @return le {@link ResponseEntity} avec statut {@code 200 (OK)} et le role à modifier,
+     * ou avec statut {@code 400 (Bad Request)} si le role n'est pas valide,
+     * ou avec statut {@code 500 (Internal Server Error)} si le role n'est pas modifiable.
+     * @throws URISyntaxException si l'URL n'est pas correct.
+     */
     @PutMapping("/roles/{id}")
     public ResponseEntity<Role> updateRole(@PathVariable(value = "id", required = false) final Long id, @Valid @RequestBody Role role) {
         log.debug("Demande REST pour mettre à jour le role : {}, {}", id, role);
