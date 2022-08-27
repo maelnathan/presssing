@@ -36,6 +36,8 @@
 		<HikariCP.version>5.0.1</HikariCP.version>
 		<!--=== Version de la documentation ===-->
 		<springdoc-openapi-ui.version>1.6.11</springdoc-openapi-ui.version>
+		<!--=== Version de la documentation ===-->
+		<problem-spring-web.version>0.28.0-RC.0</problem-spring-web.version>
 	</properties>
 
 	<dependencies>
@@ -96,6 +98,14 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<!--=== Pour les informations pratiques sur les erreurs ===-->
+		<dependency>
+			<groupId>org.zalando</groupId>
+			<artifactId>problem-spring-web</artifactId>
+			<version>${problem-spring-web.version}</version>
+		</dependency>
+
 
 		<!--=== Pour les tests unitaires.===-->
 		<dependency>

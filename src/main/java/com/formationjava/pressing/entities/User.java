@@ -21,6 +21,8 @@ import java.util.Set;
 @Entity
 @Table(name = "t_user")
 public class User implements Serializable {
+
+    // ID utilisé pour sérialiser/désérialiser un objet d'une classe Serializable .
     private static long serialVersionUID = 1L;
 
     @Id

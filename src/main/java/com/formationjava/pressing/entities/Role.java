@@ -17,6 +17,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "t_role")
 public class Role implements Serializable {
+
     private static long serialVersionUID = 1L;
 
     @Id
@@ -26,4 +27,8 @@ public class Role implements Serializable {
     @NotNull
     @Size(min = 2, max = 45)
     private String name;
+
+    private Integer version;
+
+    private Boolean activated = false;
 }
