@@ -7,6 +7,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.text.MessageFormat;
 
 public final class PaginationUtil {
+
     private static final String HEADER_X_TOTAL_COUNT = "X-Total-Count";
     private static final String HEADER_LINK_FORMAT = "<{0}>; rel=\"{1}\"";
 
