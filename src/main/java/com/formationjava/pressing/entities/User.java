@@ -42,13 +42,12 @@ public class User implements Serializable {
     @Column(length = 254, unique = true)
     private String email;
 
-    @NotNull
     @Column(nullable = false)
     private boolean activated = false;
 
     private Integer version;
 
-    @JsonIgnore
+    //@JsonIgnore
     @ManyToMany
     @JoinTable(name = "t_user_role"
             , joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")}

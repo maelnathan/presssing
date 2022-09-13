@@ -47,11 +47,13 @@ public class RoleServiceImpl implements RoleService {
                     if (role.getName() != null) {
                         existingRole.setName(role.getName());
                     }
-                    if (role.getVersion() != null) {
-                        existingRole.setVersion(role.getVersion()+1);
-                    }
+
                     if (role.getActivated() != null) {
                         existingRole.setActivated(role.getActivated());
+                    }
+
+                    if (role.getVersion() != null) {
+                        existingRole.setVersion(role.getVersion()+1);
                     }
                     return existingRole;
                 })
@@ -72,7 +74,7 @@ public class RoleServiceImpl implements RoleService {
     public Optional<Role> delete(Long id) {
        // Recuperer l'objet à supprimer
        Optional<Role> role = roleRepository.findById(id);
-       //Mettre l'objet à supprimer dans roleToDelete et le upprimer s'il est present
+       //Mettre l'objet à supprimer dans roleToDelete et le supprimer s'il est present
        roleRepository.findById(id).ifPresent(existRole->{
            roleRepository.delete(existRole);
            log.debug("Role supprimé: {}", role);
@@ -82,7 +84,7 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public void delete(Long id) {
-        log.debug("Request to delete Civility : {}", id);
+        log.debug("Request to delete role : {}", id);
         roleRepository.deleteById(id);
     }
 
